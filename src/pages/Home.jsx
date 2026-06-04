@@ -120,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* Ganadores recientes */}
-      <section className="py-20 bg-black">
+      <section className="py-20" style={{ background: '#111111' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <p className="text-energizer-red font-bold uppercase tracking-widest text-sm mb-2">Ellos ya ganaron</p>
@@ -134,7 +134,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <button
               onClick={() => navigate('/ganadores')}
-              className="border-2 border-energizer-yellow text-energizer-yellow font-bold py-3 px-8 rounded-full uppercase tracking-wider hover:bg-energizer-yellow hover:text-black transition-all duration-200"
+              className="border-2 border-energizer-yellow text-energizer-yellow font-bold py-3 px-8 rounded-none uppercase tracking-wider hover:bg-energizer-yellow hover:text-black transition-all duration-200"
             >
               Ver todos los ganadores
             </button>
@@ -143,14 +143,20 @@ export default function Home() {
       </section>
 
       {/* Social CTA */}
-      <section className="py-16 bg-energizer-red">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-black text-white uppercase mb-2">¡Síguenos en redes!</h2>
-          <p className="text-white/80 mb-8 text-lg">No te pierdas noticias, ganadores y más sorteos especiales.</p>
+      <section className="py-16 relative overflow-hidden clip-diagonal" style={{ background: '#EE3A43' }}>
+        {/* Speed lines background */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <line x1="-10%" y1="20%" x2="110%" y2="10%" stroke="#000" strokeWidth="2" opacity="0.07" />
+          <line x1="-10%" y1="45%" x2="110%" y2="35%" stroke="#000" strokeWidth="1" opacity="0.05" />
+          <line x1="-10%" y1="70%" x2="110%" y2="60%" stroke="#000" strokeWidth="2" opacity="0.07" />
+        </svg>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <h2 className="headline text-6xl md:text-8xl text-white mb-2">¡Síguenos en redes!</h2>
+          <p className="text-white/80 mb-8 text-xl font-semibold tracking-wide uppercase">No te pierdas noticias, ganadores y más sorteos especiales.</p>
           <div className="flex justify-center gap-4">
             <a
               href="#"
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-full transition-colors"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-none transition-colors"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -159,7 +165,7 @@ export default function Home() {
             </a>
             <a
               href="#"
-              className="flex items-center gap-2 text-white font-bold px-6 py-3 rounded-full transition-opacity hover:opacity-80"
+              className="flex items-center gap-2 text-white font-bold px-6 py-3 rounded-none transition-opacity hover:opacity-80"
               style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

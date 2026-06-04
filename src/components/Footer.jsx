@@ -2,8 +2,14 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 pt-12 pb-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-black pt-0 pb-6">
+      {/* Decorative gradient top line */}
+      <div style={{ height: '4px', background: 'linear-gradient(to right, #EE3A43, #FFF200, #F8A723)' }} />
+      {/* Watermark */}
+      <div className="overflow-hidden pointer-events-none select-none" aria-hidden="true">
+        <span className="headline text-[8rem] md:text-[12rem] text-white/[0.03] block text-center leading-none">ENERGIZER</span>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
