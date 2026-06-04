@@ -38,13 +38,13 @@ export default function Ganadores() {
   const handleFilter = (v) => { setFilter(v); setPage(1) }
 
   return (
-    <div className="min-h-screen bg-black py-16">
+    <div className="min-h-screen bg-white py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10">
-          <p className="text-energizer-red font-bold uppercase tracking-widest text-sm mb-2">Ellos ya ganaron</p>
-          <h1 className="section-title text-white mb-3">Ganadores</h1>
-          <p className="text-gray-400">
+          <p className="text-[#EE3A43] font-black uppercase tracking-widest text-sm mb-2">Ellos ya ganaron</p>
+          <h1 className="section-title text-black mb-3">Ganadores</h1>
+          <p className="text-gray-700">
             Lista oficial de participantes premiados durante la campaña Registra y Gana 2026.
           </p>
         </div>
@@ -64,11 +64,12 @@ export default function Ganadores() {
             <button
               key={f.v}
               onClick={() => handleFilter(f.v)}
-              className={`text-sm font-semibold px-4 py-2 rounded-full border transition-all ${
+              className={`text-sm font-bold px-4 py-2 transition-all ${
                 filter === f.v
-                  ? 'bg-energizer-yellow text-black border-energizer-yellow'
-                  : 'bg-transparent text-gray-300 border-white/20 hover:border-energizer-yellow/50'
+                  ? 'bg-black text-[#FFF200]'
+                  : 'bg-transparent text-black border-2 border-black hover:bg-black hover:text-[#FFF200]'
               }`}
+              style={{ borderRadius: 0 }}
             >
               {f.label}
             </button>
@@ -76,12 +77,12 @@ export default function Ganadores() {
         </div>
 
         {/* Count */}
-        <p className="text-gray-500 text-sm mb-4">
+        <p className="text-gray-600 text-sm mb-4">
           Mostrando {slice.length} de {filtered.length} ganadores
         </p>
 
         {/* List */}
-        <div className="space-y-3 mb-8">
+        <div className="border-4 border-black bg-white mb-8">
           {slice.length === 0 ? (
             <p className="text-center text-gray-500 py-8">No hay ganadores en este período aún.</p>
           ) : (
@@ -97,7 +98,8 @@ export default function Ganadores() {
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page === 1}
-              className="w-9 h-9 rounded-full border border-white/20 text-white flex items-center justify-center disabled:opacity-30 hover:border-energizer-yellow hover:text-energizer-yellow transition-all"
+              className="w-9 h-9 border-2 border-black text-black flex items-center justify-center disabled:opacity-30 hover:bg-black hover:text-[#FFF200] transition-all"
+              style={{ borderRadius: 0 }}
             >
               ‹
             </button>
@@ -105,11 +107,12 @@ export default function Ganadores() {
               <button
                 key={n}
                 onClick={() => setPage(n)}
-                className={`w-9 h-9 rounded-full text-sm font-bold transition-all ${
+                className={`w-9 h-9 text-sm font-bold transition-all ${
                   page === n
-                    ? 'bg-energizer-yellow text-black'
-                    : 'border border-white/20 text-white hover:border-energizer-yellow hover:text-energizer-yellow'
+                    ? 'bg-black text-[#FFF200]'
+                    : 'border-2 border-black text-black hover:bg-black hover:text-[#FFF200]'
                 }`}
+                style={{ borderRadius: 0 }}
               >
                 {n}
               </button>
@@ -117,7 +120,8 @@ export default function Ganadores() {
             <button
               onClick={() => setPage((p) => Math.min(total, p + 1))}
               disabled={page === total}
-              className="w-9 h-9 rounded-full border border-white/20 text-white flex items-center justify-center disabled:opacity-30 hover:border-energizer-yellow hover:text-energizer-yellow transition-all"
+              className="w-9 h-9 border-2 border-black text-black flex items-center justify-center disabled:opacity-30 hover:bg-black hover:text-[#FFF200] transition-all"
+              style={{ borderRadius: 0 }}
             >
               ›
             </button>

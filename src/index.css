@@ -3,73 +3,38 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: 'Barlow Condensed', sans-serif;
-    background-color: #000000;
-    color: #ffffff;
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-  #root {
-    width: 100%;
-    min-height: 100vh;
-  }
+  #root { width: 100%; min-height: 100vh; }
 }
 
 @layer components {
-  .headline {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.02em;
-  }
   .btn-primary {
-    @apply bg-energizer-yellow text-energizer-black font-bold py-3 px-8 rounded-none uppercase tracking-wider transition-all duration-200 hover:brightness-110 active:scale-95;
-    border: 2px solid #000;
-    box-shadow: 3px 3px 0px #000;
+    @apply bg-[#000000] text-[#FFF200] font-black py-4 px-10 uppercase tracking-wider transition-all duration-150 hover:bg-[#EE3A43] active:scale-95 text-lg;
+    border: none;
+    border-radius: 0;
   }
-  .btn-secondary {
-    @apply bg-energizer-red text-white font-bold py-3 px-8 rounded-none uppercase tracking-wider transition-all duration-200 hover:brightness-110 active:scale-95;
+  .btn-outline {
+    @apply bg-transparent text-[#000000] font-black py-4 px-10 uppercase tracking-wider transition-all duration-150 hover:bg-[#000000] hover:text-white text-lg;
+    border: 3px solid #000000;
+    border-radius: 0;
+  }
+  .btn-outline-white {
+    @apply bg-transparent text-white font-black py-4 px-10 uppercase tracking-wider transition-all duration-150 hover:bg-white hover:text-black text-lg;
+    border: 3px solid white;
+    border-radius: 0;
   }
   .section-title {
-    @apply text-3xl md:text-5xl font-black uppercase tracking-tight;
+    @apply text-4xl md:text-5xl font-black uppercase tracking-tight;
     font-family: 'Bebas Neue', sans-serif;
   }
-  .clip-diagonal {
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-  }
-  .clip-diagonal-reverse {
-    clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 92%);
-  }
-  .parallelogram {
-    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
-  }
-}
-
-@keyframes speed-line {
-  0% {
-    transform: translateX(-100%) skewX(-15deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(200%) skewX(-15deg);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    text-shadow: 0 0 10px #FFF200, 0 0 20px #FFF200, 0 0 40px #FFF200;
-  }
-  50% {
-    text-shadow: 0 0 20px #FFF200, 0 0 40px #FFF200, 0 0 80px #FFF200, 0 0 120px #F8A723;
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
   }
 }

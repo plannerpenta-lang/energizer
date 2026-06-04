@@ -51,14 +51,14 @@ export default function Terminos() {
   const [open, setOpen] = useState(null)
 
   return (
-    <div className="min-h-screen bg-black py-16">
+    <div className="min-h-screen bg-[#F5F5F5] py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-energizer-red font-bold uppercase tracking-widest text-sm mb-2">Legalidad</p>
-          <h1 className="section-title text-white mb-3">Términos y Condiciones</h1>
-          <p className="text-gray-400">
-            Promoción <strong className="text-white">Registra y Gana</strong> · Energizer® × Farmacias Guadalajara<br />
+          <p className="text-[#EE3A43] font-black uppercase tracking-widest text-sm mb-2">Legalidad</p>
+          <h1 className="section-title text-black mb-3">Términos y Condiciones</h1>
+          <p className="text-gray-700">
+            Promoción <strong className="text-black">Registra y Gana</strong> · Energizer® × Farmacias Guadalajara<br />
             Vigencia: 01/04/2026 – 17/07/2026
           </p>
         </div>
@@ -66,26 +66,23 @@ export default function Terminos() {
         {/* Accordion */}
         <div className="space-y-3">
           {SECTIONS.map((s, i) => (
-            <div
-              key={i}
-              className="border border-white/10 rounded-xl overflow-hidden"
-            >
+            <div key={i} className="overflow-hidden border border-gray-300">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-6 py-4 bg-white/5 hover:bg-white/10 transition-colors text-left"
+                className="w-full flex items-center justify-between px-6 py-4 bg-white hover:bg-gray-50 transition-colors text-left"
               >
-                <span className="text-white font-semibold text-sm">{s.title}</span>
+                <span className="text-black font-semibold text-sm">{s.title}</span>
                 <svg
-                  className={`w-5 h-5 text-energizer-yellow transition-transform flex-shrink-0 ml-3 ${open === i ? 'rotate-180' : ''}`}
+                  className={`w-5 h-5 text-[#EE3A43] transition-transform flex-shrink-0 ml-3 ${open === i ? 'rotate-180' : ''}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {open === i && (
-                <div className="px-6 py-4 bg-black/40">
+                <div className="px-6 py-4 bg-white border-t border-gray-200">
                   {s.content.split('\n').map((line, idx) => (
-                    <p key={idx} className={`text-gray-300 text-sm leading-relaxed ${idx > 0 ? 'mt-3' : ''}`}>
+                    <p key={idx} className={`text-gray-700 text-sm leading-relaxed ${idx > 0 ? 'mt-3' : ''}`}>
                       {line}
                     </p>
                   ))}

@@ -1,33 +1,44 @@
+import { useState } from 'react'
+
+const stepColors = ['#EE3A43', '#F8A723', '#C8A800', '#000000']
+const stepBgHovers = ['#EE3A43', '#F8A723', '#FFF200', '#000000']
+const titleHoverColors = ['#ffffff', '#ffffff', '#000000', '#FFF200']
+const descHoverColors = ['#ffffff', '#ffffff', '#000000', '#FFF200']
+
 export default function StepCard({ number, icon, title, description }) {
+  const [hovered, setHovered] = useState(false)
+  const color = stepColors[number - 1]
+
   return (
     <div
-      className="relative overflow-hidden border-l-4 border-energizer-yellow group transition-transform duration-300 hover:translate-x-2 cursor-default"
+      className="relative p-6 transition-all duration-200 cursor-default"
       style={{
-        clipPath: 'polygon(5% 0, 100% 0, 95% 100%, 0% 100%)',
-        background: 'linear-gradient(135deg, #111 0%, #1a1a1a 100%)',
-        padding: '1.5rem 2rem 1.5rem 1.5rem',
+        border: `3px solid ${color}`,
+        backgroundColor: hovered ? stepBgHovers[number - 1] : '#ffffff',
       }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      {/* Big decorative number in background */}
       <span
-        className="headline absolute -bottom-4 -right-2 text-[7rem] leading-none select-none pointer-events-none"
-        style={{ color: '#FFF200', opacity: 0.12 }}
-        aria-hidden="true"
+        className="headline absolute top-2 right-3 text-7xl leading-none select-none pointer-events-none"
+        style={{ color, opacity: 0.15 }}
       >
         {number}
       </span>
-
-      {/* Content */}
       <div className="relative z-10">
-        {/* Icon + number badge */}
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-12 h-12 bg-energizer-yellow flex items-center justify-center text-energizer-black text-2xl flex-shrink-0">
-            {icon}
-          </div>
-          <span className="headline text-4xl text-energizer-red leading-none">{number}</span>
-        </div>
-        <h3 className="headline text-2xl text-white mb-2 group-hover:text-energizer-yellow transition-colors">{title}</h3>
-        <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+        <div className="text-3xl mb-3">{icon}</div>
+        <h3
+          className="headline text-2xl mb-2 transition-colors duration-200"
+          style={{ color: hovered ? titleHoverColors[number - 1] : '#000000' }}
+        >
+          {title}
+        </h3>
+        <p
+          className="text-sm leading-relaxed transition-colors duration-200"
+          style={{ color: hovered ? descHoverColors[number - 1] : '#374151' }}
+        >
+          {description}
+        </p>
       </div>
     </div>
   )
