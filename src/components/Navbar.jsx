@@ -13,21 +13,21 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="bg-energizer-red sticky top-0 z-50 shadow-lg">
+    <nav className="sticky top-0 z-50 shadow-lg" style={{ background: '#CC1F28' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logos */}
           <Link to="/" className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               {/* Farmacias Guadalajara wordmark */}
-              <div className="bg-white rounded px-2 py-1">
+              <div className="bg-white px-2 py-1">
                 <span className="text-energizer-red font-black text-xs leading-tight block">FARMACIAS</span>
                 <span className="text-energizer-red font-black text-xs leading-tight block">GUADALAJARA</span>
               </div>
               <span className="text-white font-black text-lg">×</span>
               {/* Energizer wordmark */}
-              <div className="bg-energizer-yellow rounded px-2 py-1">
-                <span className="text-energizer-black font-black text-sm tracking-widest">ENERGIZER</span>
+              <div className="bg-energizer-yellow px-2 py-1">
+                <span className="headline text-energizer-black text-xl tracking-widest">ENERGIZER</span>
               </div>
             </div>
           </Link>
@@ -40,17 +40,26 @@ export default function Navbar() {
                 to={l.to}
                 end={l.to === '/'}
                 className={({ isActive }) =>
-                  `text-sm font-semibold uppercase tracking-wider transition-colors ${
+                  `font-bold uppercase tracking-wider text-sm transition-all relative group ${
                     isActive ? 'text-energizer-yellow' : 'text-white hover:text-energizer-yellow'
                   }`
                 }
               >
-                {l.label}
+                {({ isActive }) => (
+                  <>
+                    {l.label}
+                    <span
+                      className="absolute -bottom-1 left-0 h-0.5 bg-energizer-yellow transition-all duration-300"
+                      style={{ width: isActive ? '100%' : '0%' }}
+                    />
+                  </>
+                )}
               </NavLink>
             ))}
             <button
               onClick={() => navigate('/registrar')}
-              className="btn-primary text-sm py-2 px-5"
+              className="bg-energizer-yellow text-black font-black py-2 px-5 rounded-none uppercase tracking-wider text-sm border-2 border-black hover:brightness-110 transition-all"
+              style={{ boxShadow: '2px 2px 0px #000' }}
             >
               Registrar Ticket
             </button>
@@ -77,7 +86,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-black/90 px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-black px-4 py-4 flex flex-col gap-4 border-t-2 border-energizer-yellow">
           {links.map((l) => (
             <NavLink
               key={l.to}
@@ -85,7 +94,7 @@ export default function Navbar() {
               end={l.to === '/'}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `text-sm font-semibold uppercase tracking-wider ${
+                `font-bold uppercase tracking-wider text-sm ${
                   isActive ? 'text-energizer-yellow' : 'text-white'
                 }`
               }
@@ -95,7 +104,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => { navigate('/registrar'); setOpen(false) }}
-            className="btn-primary text-sm py-2 px-5 text-center"
+            className="bg-energizer-yellow text-black font-black py-2 px-5 rounded-none uppercase tracking-wider text-sm border-2 border-black text-center"
           >
             Registrar Ticket
           </button>

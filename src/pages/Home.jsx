@@ -76,7 +76,13 @@ export default function Home() {
       <HeroSection />
 
       {/* Mecánica */}
-      <section className="py-20 bg-black">
+      <section
+        className="py-20 relative"
+        style={{
+          background: '#050505',
+          backgroundImage: 'repeating-linear-gradient(160deg, transparent, transparent 60px, rgba(0,60,0,0.04) 60px, rgba(0,60,0,0.04) 61px)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-energizer-red font-bold uppercase tracking-widest text-sm mb-2">¿Cómo participar?</p>
@@ -96,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Premios */}
-      <section className="py-20 bg-gradient-to-b from-black via-energizer-black to-black">
+      <section className="py-20 bg-black clip-diagonal-reverse relative" style={{ marginTop: '-2px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-energizer-yellow font-bold uppercase tracking-widest text-sm mb-2">Lo que puedes ganar</p>
