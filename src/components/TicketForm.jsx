@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Icon from './Icon'
 
 const initialState = {
   nombre: '',
@@ -64,7 +65,7 @@ export default function TicketForm() {
   if (submitted) {
     return (
       <div className="text-center py-16 px-6">
-        <div className="text-6xl mb-4">🎉</div>
+        <div className="flex justify-center mb-4"><Icon name="trophy" size="xl" bg="red" /></div>
         <h2 className="text-3xl font-black text-black mb-3 uppercase">
           ¡Ticket Registrado!
         </h2>
@@ -73,7 +74,7 @@ export default function TicketForm() {
         </p>
         <div className="bg-[#FFF200] border-l-4 border-black px-6 py-4 max-w-md mx-auto mb-8 text-left">
           <p className="text-black font-bold text-sm">
-            ⚠️ Recuerda guardar todos tus empaques y facturas registradas, serán solicitadas para entregar el premio.
+            Recuerda guardar todos tus empaques y facturas registradas, serán solicitadas para entregar el premio.
           </p>
         </div>
         <button
@@ -90,7 +91,7 @@ export default function TicketForm() {
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       {/* Alert */}
       <div className="flex items-start gap-3 bg-[#FFF200] border-l-4 border-black px-4 py-3">
-        <span className="text-black text-xl flex-shrink-0">⚠️</span>
+        <Icon name="warning" size="sm" bg="yellow" />
         <p className="text-black text-sm font-bold">
           Recuerda guardar todos tus empaques y facturas registradas, serán solicitadas para entregar el premio.
         </p>
@@ -189,7 +190,7 @@ export default function TicketForm() {
               <img src={preview} alt="Vista previa" className="max-h-40 object-contain" />
             ) : (
               <>
-                <span className="text-4xl mb-2">📷</span>
+                <div className="mb-2"><Icon name="camera" size="lg" bg="black" /></div>
                 <span className="text-gray-600 text-sm text-center">
                   Haz clic para subir o arrastra tu foto aquí<br />
                   <span className="text-gray-500 text-xs">JPG, PNG — máx. 5 MB</span>
@@ -238,13 +239,7 @@ export default function TicketForm() {
         className="btn-primary w-full py-4 text-base disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? (
-          <span className="flex items-center justify-center gap-2">
-            <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-            </svg>
-            Registrando…
-          </span>
+          'Registrando...'
         ) : (
           'Registrar mi ticket'
         )}

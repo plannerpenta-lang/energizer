@@ -26,7 +26,7 @@ export default function StepCard({ number, icon, title, description }) {
         {number}
       </span>
       <div className="relative z-10">
-        <div className="text-3xl mb-3">{icon}</div>
+        <div className="mb-3">{icon}</div>
         <h3
           className="headline text-2xl mb-2 transition-colors duration-200"
           style={{ color: hovered ? titleHoverColors[number - 1] : '#000000' }}

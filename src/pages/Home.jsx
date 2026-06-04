@@ -3,20 +3,21 @@ import HeroSection from '../components/HeroSection'
 import StepCard from '../components/StepCard'
 import PrizeCard from '../components/PrizeCard'
 import WinnerRow from '../components/WinnerRow'
+import Icon from '../components/Icon'
 
 const STEPS = [
-  { number: 1, icon: '🛒', title: 'Compra', description: 'Adquiere cualquier producto Energizer® en Farmacias Guadalajara participantes durante la vigencia de la promoción.' },
-  { number: 2, icon: '📋', title: 'Registra', description: 'Ingresa a este sitio, llena el formulario con tus datos y sube una foto de tu ticket de compra.' },
-  { number: 3, icon: '🎯', title: 'Participa', description: 'Tu registro se valida automáticamente. Recibirás un correo de confirmación con tu folio de participación.' },
-  { number: 4, icon: '🏆', title: 'Gana', description: 'Cada semana se sortean premios instantáneos y al final de la campaña se anuncia el ganador del viaje.' },
+  { number: 1, icon: <Icon name="cart" size="lg" bg="red" />, title: 'Compra', description: 'Adquiere cualquier producto Energizer® en Farmacias Guadalajara participantes durante la vigencia de la promoción.' },
+  { number: 2, icon: <Icon name="ticket" size="lg" bg="black" />, title: 'Registra', description: 'Ingresa a este sitio, llena el formulario con tus datos y sube una foto de tu ticket de compra.' },
+  { number: 3, icon: <Icon name="target" size="lg" bg="red" />, title: 'Participa', description: 'Tu registro se valida automáticamente. Recibirás un correo de confirmación con tu folio de participación.' },
+  { number: 4, icon: <Icon name="trophy" size="lg" bg="black" />, title: 'Gana', description: 'Cada semana se sortean premios instantáneos y al final de la campaña se anuncia el ganador del viaje.' },
 ]
 
 const PRIZES = [
-  { icon: '✈️', title: 'Viaje a Playa del Carmen', description: 'Para 2 personas — boletos de avión, hospedaje 5 noches en hotel todo incluido y traslados.', featured: true },
-  { icon: '📱', title: 'Smartphone Premium', description: '1 smartphone de alta gama cada semana de la campaña.' },
-  { icon: '🎧', title: 'Audífonos Inalámbricos', description: 'Audífonos premium con cancelación de ruido.' },
-  { icon: '💻', title: 'Tablet', description: 'Tablet 10" con conectividad WiFi y 128 GB de almacenamiento.' },
-  { icon: '🎁', title: 'Premios Instantáneos', description: 'Tarjetas de regalo, productos Energizer® y descuentos en Farmacias Guadalajara.' },
+  { icon: <Icon name="plane" size="xl" bg="black" />, title: 'Viaje a Playa del Carmen', description: 'Para 2 personas — boletos de avión, hospedaje 5 noches en hotel todo incluido y traslados.', featured: true },
+  { icon: <Icon name="phone" size="lg" bg="red" />, title: 'Smartphone Premium', description: '1 smartphone de alta gama cada semana de la campaña.' },
+  { icon: <Icon name="headphones" size="lg" bg="black" />, title: 'Audífonos Inalámbricos', description: 'Audífonos premium con cancelación de ruido.' },
+  { icon: <Icon name="tablet" size="lg" bg="red" />, title: 'Tablet', description: 'Tablet 10" con conectividad WiFi y 128 GB de almacenamiento.' },
+  { icon: <Icon name="gift" size="lg" bg="black" />, title: 'Premios Instantáneos', description: 'Tarjetas de regalo, productos Energizer® y descuentos en Farmacias Guadalajara.' },
 ]
 
 const WINNERS = [
@@ -88,7 +89,7 @@ export default function Home() {
       {/* Social CTA */}
       <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="headline text-6xl md:text-8xl text-white mb-2">¡Síguenos en redes!</h2>
+          <h2 className="headline text-6xl md:text-8xl text-white mb-2">SÍGUENOS EN REDES</h2>
           <p className="text-gray-400 mb-8 text-lg font-semibold uppercase tracking-wide">No te pierdas noticias, ganadores y sorteos especiales.</p>
           <div className="flex justify-center gap-4">
             <a href="#" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 transition-colors" style={{borderRadius:0}}>

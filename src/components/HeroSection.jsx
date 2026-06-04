@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Icon from './Icon'
 
 export default function HeroSection() {
   const navigate = useNavigate()
@@ -27,7 +28,7 @@ export default function HeroSection() {
             </p>
 
             <div className="flex items-start gap-3 bg-[#FFF200] border-l-4 border-black px-4 py-3 mb-6 max-w-xl">
-              <span className="text-black text-lg flex-shrink-0">⚠</span>
+              <Icon name="warning" size="sm" bg="yellow" />
               <p className="text-black text-sm font-bold">
                 Conserva todos tus empaques y facturas — serán solicitados para entregar el premio.
               </p>
@@ -56,7 +57,7 @@ export default function HeroSection() {
             <div className="bg-[#EE3A43] p-10 relative overflow-hidden">
               <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#FFF200]" style={{ clipPath: 'polygon(0 100%, 100% 0, 100% 100%)' }} />
               <div className="relative z-10 text-center">
-                <div className="text-8xl mb-4">✈️</div>
+                <div className="flex justify-center mb-4"><Icon name="plane" size="xl" bg="black" /></div>
                 <p className="headline text-2xl text-white/80 tracking-widest mb-0">GANA UN VIAJE A</p>
                 <p className="headline text-5xl md:text-6xl text-[#FFF200] leading-none mb-2">PLAYA DEL<br/>CARMEN</p>
                 <p className="headline text-xl text-white tracking-widest mb-6">PARA 2 PERSONAS</p>
