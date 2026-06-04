@@ -12,7 +12,7 @@ export default function Footer() {
                 <span className="text-black font-black text-[10px] leading-tight block uppercase">Guadalajara</span>
               </div>
               <span className="text-black font-black text-xl">×</span>
-              <span className="headline text-2xl text-[#EE3A43]">ENERGIZER</span>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Energizer_logo.svg/1280px-Energizer_logo.svg.png" alt="Energizer" className="h-7 w-auto" />
             </div>
             <p className="text-gray-600 text-sm">Campaña promocional vigente del 01/04/2026 al 17/07/2026.</p>
           </div>

@@ -23,7 +23,7 @@ export default function Navbar() {
                 <span className="text-black font-black text-[10px] leading-tight block uppercase">Guadalajara</span>
               </div>
               <span className="text-black font-black text-xl leading-none">×</span>
-              <span className="headline text-2xl text-[#EE3A43] leading-none tracking-wider">ENERGIZER</span>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Energizer_logo.svg/1280px-Energizer_logo.svg.png" alt="Energizer" className="h-7 w-auto" />
             </div>
           </Link>
 
